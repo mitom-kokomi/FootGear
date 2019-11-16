@@ -1,45 +1,6 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery-3.2.1.min.js"></script>
-</head>
-<body>
-    <!-- Đây là top -->
-    <div class="container" style="padding-bottom:15px;border-bottom:1px solid;">
-        <div class="row">
-            <div class="col-sm-6">
-                    <a href="index.html">
-                            <img src="../img/Logo.png" style="width:150px;height:86px;margin-top:3%;" alt="Logo">
-                        </a>
-            </div>
-            <div class="col-sm-6" style="margin-top:4%;">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="row">
-                            <div class="input-group col-md-12">
-                                <input class="form-control py-2" type="search" placeholder="Tìm kiếm theo tên sản phẩm">
-                                <span class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button">
-                                        <i class="fa fa-search">
-                                        </i>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <button  class="btn btn-success" style="border:1px solid;float:right;">
-                            <a href="log.html" style="color: cornsilk !important;">Tài khoản</a></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<?php
+    include 'inc/header.php';
+?>
 
    <!-- Đây là thân-->
    <div class="body-list-product" style="clear: both">
@@ -232,7 +193,7 @@
                                         <!--phần đầu chứa hình ảnh của sản phẩm-->
                                         <div class="header-image-product" style="height: 200px">
                                             <div class="right" style="width: 80%;;float:left">
-                                                <img src="../img/sanpham3.jpg" class="img-responsive img-change">
+                                                <img src="img/sanpham3.jpg" class="img-responsive img-change">
                                             </div>
                                         </div>
                                            <!--kết thúc phần đầu của sản phẩm-->
@@ -258,7 +219,7 @@
                                         <!--phần đầu chứa hình ảnh của sản phẩm-->
                                         <div class="header-image-product" style="height: 200px">
                                             <div class="right" style="width: 80%;;float:left">
-                                                <img src="../img/nike2.jpg" class="img-responsive img-change">
+                                                <img src="img/nike2.jpg" class="img-responsive img-change">
                                             </div>
                                         </div>
                                            <!--kết thúc phần đầu của sản phẩm-->
@@ -279,12 +240,12 @@
                                            <!--kết thúc phần thông tin của sản phầm-->
                                     </div>
                             </div>
-                            <div class="col-xs-12 col-sm-4 product" style=";padding:0;height: 385px" id="pro1">
+                            <div class="col-xs-12 col-sm-4 product" style="padding:0;height: 385px" id="pro1">
                                     <div class="sanpham" id="sanpham1">
                                         <!--phần đầu chứa hình ảnh của sản phẩm-->
                                         <div class="header-image-product" style="height: 200px">
                                             <div class="right" style="width: 80%;;float:left">
-                                                <img src="../img/nike3.jpg" class="img-responsive img-change">
+                                                <img src="img/nike3.jpg" class="img-responsive img-change">
                                             </div>
                                         </div>
                                            <!--kết thúc phần đầu của sản phẩm-->
@@ -307,12 +268,12 @@
                             </div>
                     </div>
                     <div class="row">
-                            <div class="col-xs-12 col-sm-4 product" style=";padding:0;height: 385px" id="pro1">
+                            <div class="col-xs-12 col-sm-4 product" style="padding:0;height: 385px" id="pro1">
                                     <div class="sanpham" id="sanpham1">
                                         <!--phần đầu chứa hình ảnh của sản phẩm-->
                                         <div class="header-image-product" style="height: 200px">
                                             <div class="right" style="width: 80%;;float:left">
-                                                <img src="../img/nike4.jpg" class="img-responsive img-change">
+                                                <img src="img/nike4.jpg" class="img-responsive img-change">
                                             </div>
                                         </div>
                                            <!--kết thúc phần đầu của sản phẩm-->
@@ -333,12 +294,12 @@
                                            <!--kết thúc phần thông tin của sản phầm-->
                                     </div>
                             </div>
-                            <div class="col-xs-12 col-sm-4 product" style=";padding:0;height: 385px" id="pro1">
+                            <div class="col-xs-12 col-sm-4 product" style="padding:0;height: 385px" id="pro1">
                                     <div class="sanpham" id="sanpham1">
                                         <!--phần đầu chứa hình ảnh của sản phẩm-->
                                         <div class="header-image-product" style="height: 200px">
                                             <div class="right" style="width: 80%;;float:left">
-                                                <img src="../img/nike5.jpg" class="img-responsive img-change">
+                                                <img src="img/nike5.jpg" class="img-responsive img-change">
                                             </div>
                                         </div>
                                            <!--kết thúc phần đầu của sản phẩm-->
@@ -359,12 +320,12 @@
                                            <!--kết thúc phần thông tin của sản phầm-->
                                     </div>
                             </div>
-                            <div class="col-xs-12 col-sm-4 product" style=";padding:0;height: 385px" id="pro1">
+                            <div class="col-xs-12 col-sm-4 product" style="padding:0;height: 385px" id="pro1">
                                     <div class="sanpham" id="sanpham1">
                                         <!--phần đầu chứa hình ảnh của sản phẩm-->
                                         <div class="header-image-product" style="height: 200px">
                                             <div class="right" style="width: 80%;;float:left">
-                                                <img src="../img/nike7.jpg" class="img-responsive img-change">
+                                                <img src="img/nike7.jpg" class="img-responsive img-change">
                                             </div>
                                         </div>
                                            <!--kết thúc phần đầu của sản phẩm-->
@@ -400,55 +361,20 @@
      <!--kết thúc phần chi tiết  danh sách các sản phẩm -->
 
     <!-- Đây là phần footer -->
-    <div class="container" style="padding-top:30px;color:black;text-align: center;border-top:2px solid;">
-        <div class="row">
-            <div class="col-md-3">
-                <a style="color: black !important;" href="#">CUSTOMER SERVICE</a>
-                <br><a href style="color: black !important;">Get Help</a>
-                <br><a href style="color: black !important;">Track Orders</a>
-                <br><a href style="color: black !important;">Returns and Refunds</a>
-            </div>
-            <div class="col-md-3">
-                <a href="#" style="color: black !important;">COMPANY INFO</a>
-                <br><a href style="color: black !important;">About Us</a>
-                <br><a href style="color: black !important;">Careers</a>
-                <br><a href style="color: black !important;">Mobile Apps</a>
-            </div>
-            <div class="col-md-3">
-                <a href="#" style="color: black !important;">PRIVACY & TERMS</a>
-                <br><a href style="color: black !important;">Privacy & Security</a>
-                <br><a href style="color: black !important;">Statement</a>
-                <br><a href style="color: black !important;">Terms and Conditions</a>
-            </div>
-            <div class="col-md-3">
-                <a href="#" style="color: black !important;">PAYMENT METHOD</a>
-                <div class="row" style="margin-top:5px ;">
-                    <div class="col-md-4 col-xs-4">
-                        <img src="../img/checkout-page1.png" style="border:1px solid;">   
-                    </div>
-                    <div class="col-md-4 col-xs-4">
-                        <img src="../img/checkout-page2.png" style="border:1px solid;">
-                    </div>
-                    <div class="col-md-4 col-xs-4">
-                        <img src="../img/checkout-page3.png" style="border:1px solid;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <script>
         // xư lý sự kiện của danh sách chi tiết sản phầm
 $(document).ready(function () {
     //  xử lý sự kiện khi người dùng click vao sản phẩm
     $(document).on('click','.product',function () {
-        window.location="productDetails.html";
+        window.location="productDetails.php";
     });
     $(document).on('click','.btn-click-xem-chi-tiet',function () {
-        window.location="productDetails.html";
+        window.location="productDetails.php";
     });
     $(document).on('click','.btn-click-muahang',function () {
-        window.location="cartPage.html";
+        window.location="cartPage.php";
     });
 
     
@@ -484,4 +410,6 @@ $(document).ready(function () {
 
 });
     </script>
-</body>
+<?php
+    include 'inc/footer.php';
+?>
