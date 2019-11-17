@@ -34,9 +34,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <button  class="btn btn-success" style="border:1px solid;float:right;">
-                            <a href="log.php" style="color: cornsilk !important;">Tài khoản</a></button>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-1">
+                        <button  class="btn btn-light" style="border:1px solid;float:right;">
+                            <a href="paymentPage.php" ><i class="fas fa-shopping-cart"></i></a></button>
+                    </div>
+                    <div class="col-sm-1">
+                        <button  class="btn btn-light" style="border:1px solid;float:right;">
+                            <a href="log.php" ><i class="fas fa-user-circle"></i></a></button>
                     </div>
                 </div>
             </div>
