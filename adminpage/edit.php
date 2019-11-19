@@ -70,8 +70,16 @@
               <?php
 
                 $conn = pg_connect("host=localhost dbname=postgres user=postgres password=postgre ");
-                $select = "SELECT * FROM product; ";
+                $perpage = !empty($_GET['perpage'])?$_GET['perpage']:4;
+                $currentpage =!empty($_GET['page'])?$_GET['page']:1;
+                $offset = ($currentpage - 1) * $perpage;
+
+                $select = "SELECT * FROM product ORDER BY productid ASC LIMIT '$perpage' OFFSET '$offset' ; ";
+
                 $result = pg_query($select);
+                $totalitem = pg_query($conn,"SELECT * FROM product; ");
+                $totalitem = pg_num_rows($totalitem);
+                $totalpage = ceil($totalitem / $perpage);
                 while ($row = pg_fetch_array($result)) {
 
                ?>
@@ -107,6 +115,10 @@
                </div>
 
                 <?php } ?>
+                <ul class="pagination" style="margin-left : 40%;">
+                  <?php include 'pagination.php'; ?>
+                </ul>
+
             </div>
 
           </div>
