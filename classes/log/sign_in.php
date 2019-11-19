@@ -12,7 +12,7 @@
 		}
 		else {
 			$db_connection = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x");
-			$sql = "select * from customer where username = '$this->u' and userpass = '$this->p'";
+			$sql = "select * from customer where username = '$this->u' and userpass = '$this->p' ";
 			$query = pg_query($db_connection,$sql);
 			$rows = pg_num_rows($query);
 			if ($rows == 0) {
@@ -20,8 +20,11 @@
 				return $alert;
 			}
 			else {
+				$sql1 = "select customername from customer where username ='$this->u' ";
+				$query1 = pg_query($db_connection,$sql1);
 				//session_start();
-				//$_SESSION['username']=$username;
+				$_SESSION['customername'] = $query1 ;
+				$_SESSION['username'] = $username;
 				header('Location:../FootGear/index.php');
 			}
 		}
