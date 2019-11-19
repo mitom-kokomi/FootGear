@@ -5,6 +5,7 @@
 ?>
 <?php
     //if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    session_start();
     if (isset($_POST['sign_in'])) {
         $username = $_POST['username'];
         $userpass = $_POST['userpass'];
@@ -13,6 +14,7 @@
         $signin_check = $s->signin_user();
     }
     else {
+        //if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['sign_up'])) {
             $customername = $_POST['customername'];
             $username = $_POST['username'];
@@ -36,7 +38,7 @@
                     <form action="log.php" method="post">
                         <div class="form-group">
                             <label>Tài khoản:</label>
-                            <input type="text" class="form-control" name="username" placeholder="Enter Username" >
+                            <input type="text" class="form-control" name="username" placeholder="Enter  your name" >
                         </div>
                         <div class="form-group">
                             <label>Mật khẩu:</label>
@@ -91,6 +93,13 @@
         </div>
     </div>
 
+
+
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
 
 
 

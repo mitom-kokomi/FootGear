@@ -24,10 +24,10 @@ class sign_up {
 				return $alert;
 			}
 			else {
-				$sql="insert into customer(customername,phone,username,userpass) values ('$this->t','$this->pn','$this->u','$this->p')";
-				$query=pg_query($db_connection,$sql);
+				$sql = "insert into customer(customername,phone,username,userpass) values ('$this->t','$this->pn','$this->u','$this->p')";
+				$query = pg_query($db_connection,$sql);
 
-				$alert ="Dễ thế mà giờ mới tạo xong ? :D ?";
+				$alert = "Dễ thế mà giờ mới tạo xong ? :D ?";
 				return $alert;
 			}
 		}
