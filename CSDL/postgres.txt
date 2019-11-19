@@ -1,0 +1,9 @@
+CREATE table product(
+	productId SERIAL PRIMARY KEY NOT NULL,
+	productName VARCHAR NOT NULL,
+	productImage VARCHAR NOT NULL,
+	price INT NOT NULL,
+	description VARCHAR NOT NULL,
+	size VARCHAR NOT NULL,
+	instock INT
+)
