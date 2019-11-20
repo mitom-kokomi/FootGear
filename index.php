@@ -1,6 +1,7 @@
 <?php
-    include 'inc/header.php';
-    include 'inc/slider.php';
+   session_start();
+   include 'inc/header.php';
+   include 'inc/slider.php';
 ?>
     <!-- Đây là phần thân  -->
      

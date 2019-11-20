@@ -22,9 +22,8 @@
 			else {
 				$sql1 = "select customername from customer where username ='$this->u' ";
 				$query1 = pg_query($db_connection,$sql1);
-				//session_start();
 				$_SESSION['customername'] = $query1 ;
-				$_SESSION['username'] = $username;
+				$_SESSION['username'] = $this->u;
 				header('Location:../FootGear/index.php');
 			}
 		}

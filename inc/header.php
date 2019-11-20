@@ -9,6 +9,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>FootGear</title>
 </head>
 <body>
     <!-- Đây là top -->
@@ -23,15 +24,15 @@
                 <div class="row">
                     <div class="col-sm-9">
                         <div class="row">
-                            <div class="input-group col-md-12">
-                                <input class="form-control py-2" type="search" placeholder="Tìm kiếm theo tên sản phẩm">
+                            <form class="input-group col-md-12" action="../FootGear/search.php" method ="post">
+                                <input class="form-control py-2" type="text" placeholder="Tìm kiếm theo tên sản phẩm" name ="searchtext" >
                                 <span class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" name="btn_search">
+                                    <button class="btn btn-outline-secondary" type="submit" name="btn_search">
                                         <i class="fa fa-search">
                                         </i>
                                     </button>
                                 </span>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <div class="col-sm-1"></div>
