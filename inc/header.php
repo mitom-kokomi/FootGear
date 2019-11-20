@@ -26,7 +26,7 @@
                             <div class="input-group col-md-12">
                                 <input class="form-control py-2" type="search" placeholder="Tìm kiếm theo tên sản phẩm">
                                 <span class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button">
+                                    <button class="btn btn-outline-secondary" type="button" name="btn_search">
                                         <i class="fa fa-search">
                                         </i>
                                     </button>

@@ -193,7 +193,18 @@
                         <?php
                            $db_connection = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x");
                            $sql = "SELECT * FROM product; ";
-                           $result = pg_query($sql);
+                           //$result = pg_query($sql);
+
+                           $perpage = !empty($_GET['perpage'])?$_GET['perpage']:6;
+                           $currentpage =!empty($_GET['page'])?$_GET['page']:1;
+                           $offset = ($currentpage - 1) * $perpage;
+           
+                           $select = "SELECT * FROM product ORDER BY productid ASC LIMIT '$perpage' OFFSET '$offset' ; ";
+           
+                           $result = pg_query($select);
+                           $totalitem = pg_query($db_connection,$sql);
+                           $totalitem = pg_num_rows($totalitem);
+                           $totalpage = ceil($totalitem / $perpage);
 
                            while ($row = pg_fetch_array($result)) {
                         ?> 
@@ -225,7 +236,10 @@
                                     </div>
                             </div>
                         <?php } ?>  
-                    </div>         
+                    </div> 
+                    <ul class="pagination" style="margin-left : 40%;padding-top:30px;">
+                        <?php include 'adminpage/pagination.php'; ?>
+                     </ul>
               </div>
            </div>
         </div>
