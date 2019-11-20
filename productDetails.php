@@ -3,6 +3,14 @@
 ?>
 
    <!-- Đây là thân-->
+   <?php
+   $conn = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x ");
+
+
+
+
+
+    ?>
 
    <div class="product-detail">
         <div class="container">
@@ -13,11 +21,18 @@
         </div>
         <div class="container">
            <div class="row">
+             <?php
+             if(isset($_POST['view'])){
+             $select = "SELECT * FROM product WHERE productid = 10; ";
+             $result = pg_query($select);}
+             while ($row = pg_fetch_array($result)) {
+          ?>
+
               <!--phần bên trái hiển thị  hình ảnh sản phẩm-->
               <div class="col-xs-12 col-sm-7" style="padding:0">
                  <!--nơi chứa hình ảnh chính ( slide trượt-->
                  <div class="img-top" style="width: 100%;overflow: hidden">
-                    <img src="img/anhchitiet3.1.png" alt="..." class="img-responsive img-top-change"
+                    <img src="<?php echo $row['productimage'] ?>" alt="..." class="img-responsive img-top-change"
                        style="display: block;">
                  </div>
                  <!--kết thúc  phần trượt sản phẩm-->
@@ -71,15 +86,11 @@
                     <img src="img/logonike.jpg" style="display: block;width: 100px;height: 100px">
                  </div>
                  <div class="info-product">
-                    <p class="name-product" style="font-size: 25px; font-weight: 700">Nike Air Force 1 Ultraforce Hi - Men Shoes</p>
-                    <p class="price" style="font-size: 28px; color: red;">$110</p>
-                    <h2 style="font-size: 18px; font-weight: 700">
-                       Product details for Nike Air Force 1 Ultraforce Hi - Men Shoes
-                    </h2>
+                    <p class="name-product" style="font-size: 25px; font-weight: 700"><?php echo $row['productname'] ?></p>
+                    <p class="price" style="font-size: 28px; color: red;"><?php echo $row['price'] ?>$</p>
+
                     <p>
-                       Color: Dk Team Red-Summit White-Dk Team Red<br/>
-                       Material: Suede<br/>
-                       Product Code: 314107174204
+                       <?php echo $row['description'] ?>
                     </p>
                     <div class="binhchon">
                        <p>
@@ -94,6 +105,7 @@
                           id="starCount"></span> Star</span>
                        </button>
                     </div>
+                  <?php } ?>
                     <!-- khu vực lựa chọn kích thước sản phẩm -->
                     <div class="choose-size-product" style="margin-top: 10px">
                        <p style="font-weight: bold;">Size Selection</p>
