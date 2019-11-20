@@ -1,0 +1,37 @@
+INSERT INTO ad(adpass,aduser,phone) VALUES  ('admin','admin','0941245294')
+;
+INSERT INTO product(productName,productImage,price,productline,description ,size,instock) VALUES 
+	('NIKE 1','img/nike1.jpg','101','NIKE','color: white and made in VietNam','S','10'),
+	('NIKE 2','img/nike2.jpg','102','NIKE','color: white and made in VietNam','M','20'),
+	('NIKE 3','img/nike3.jpg','103','NIKE','color: white and made in VietNam','L','30'),
+	('NIKE 4','img/nike4.jpg','104','NIKE','color: white and made in VietNam','L','40'),
+	('NIKE 5','img/nike5.jpg','105','NIKE','color: white and made in VietNam','XL','50'),
+	('NIKE 6','img/nike6.jpg','106','NIKE','color: white and made in VietNam','XXL','60'),
+	('NIKE 7','img/nike7.jpg','107','NIKE','color: white and made in VietNam','M','70'),
+	('NIKE 8','img/nike8.jpg','108','NIKE','color: white and made in VietNam','L','80'),
+	('NIKE 9','img/nike9.jpg','109','NIKE','color: white and made in VietNam','L','90'),
+	('NIKE 10','img/nike10.jpg','110','NIKE','color: white and made in VietNam','L','100'),
+	('NIKE 11','img/nike11.jpg','111','NIKE','color: white and  made in VietNam','M','110'),
+	('NIKE 12','img/nike12.jpg','112','NIKE','color: white and made  in VietNam','L','120'),
+	('NIKE 13','img/nike13.jpg','113','NIKE','color: white  and made in VietNam','L','130'),
+	('NIKE 14','img/nike14.jpg','114','NIKE','color: white and made  in VietNam','L','140'),
+	('NIKE 15','img/nike15.jpg','115','NIKE','color: white and made  in VietNam','XXL','150'),
+	
+	('PUMA 1','img/puma1.jpg','101','PUMA','color: black and made in VietNam','S','10'),
+	('PUMA 2','img/puma2.jpg','102','PUMA','color: black and made in VietNam','M','20'),
+	('PUMA 3','img/puma2.jpg','103','PUMA','color: black and made in VietNam','L','30'),
+	('PUMA 4','img/puma4.jpg','104','PUMA','color: black and made in VietNam','L','40'),
+	('PUMA 5','img/puma5.jpg','105','PUMA','color: black and made in VietNam','XL','50'),
+	('PUMA 6','img/puma6.jpg','106','PUMA','color: black and made in VietNam','XXL','60'),
+	('PUMA 7','img/puma7.jpg','107','PUMA','color: black and made in VietNam','M','70'),
+	('PUMA 8','img/puma8.jpg','108','PUMA','color: black and made in VietNam','L','80'),
+	('PUMA 9','img/puma9.jpg','109','PUMA','color: black and made in VietNam','L','90'),
+	('PUMA 10','img/puma10.jpg','110','PUMA','color: black and made in VietNam','L','100'),
+	('PUMA 11','img/puma12.jpg','111','PUMA','color: black and  made in VietNam','M','110'),
+	('PUMA 12','img/puma12.jpg','112','PUMA','color: black and made  in VietNam','L','120'),
+	('PUMA 13','img/puma13.jpg','113','PUMA','color: black  and made in VietNam','L','130'),
+	('PUMA 14','img/puma14.jpg','114','PUMA','color: black and made  in VietNam','L','140'),
+	('PUMA 15','img/puma15.jpg','115','PUMA','color: black and made  in VietNam','XXL','150')
+	
+;
+
