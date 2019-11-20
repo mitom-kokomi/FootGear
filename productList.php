@@ -227,11 +227,11 @@
                                             <p class="price-product" style="font-weight: bold"> <?php echo $row['price']?> </p>
 
                                         <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
-                                            <p class="footer-product">
-                                                <button  type="button" class="btn btn-success "><a href="productDetails.php ?id=<?=$row['productid']?>"></a>View</button>
+                                            <form class="footer-product" action="productDetails.php" method="post">
+                                                <button  type="button" class="btn btn-success " ><a href="productDetails.php"></a>View</button>
                                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
                                                 </button>
-                                            </p>
+                                            </form>
                                         </div>
                                            <!--kết thúc phần thông tin của sản phầm-->
                                     </div>
