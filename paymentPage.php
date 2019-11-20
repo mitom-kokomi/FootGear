@@ -1,6 +1,5 @@
 <?php
    session_start();
-   //$username = $_SESSION['customernumber'];
    $username = $_SESSION['username'];
    include 'inc/header.php';
 ?>
@@ -10,6 +9,9 @@
 
                <div class="row">
                  <?php
+                     
+
+
 
                    $conn = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x ");
 
@@ -83,20 +85,23 @@
                      </div>
                   </div>
                   <div class="right" style="float: right;">
-                    <div class="col-xs-12 col-sm-3 col-sm-offset-6">
-                     <button type="button" class="btn btn-primary btn-buy-it" style="margin-left:850px ;">
-                         <a href="index.php" style="color: cornsilk !important;">Buy It</a>
-                     </button>
-                  </div>
+                     <div class="col-xs-12 col-sm-3 col-sm-offset-6">
+                        <button type="button" class="btn btn-primary btn-buy-it" style="margin-left:850px ;">
+                           <a href="index.php" style="color: cornsilk !important;">Buy It</a>
+                        </button>
+                     </div>
+                  </div>    
                </div>
-                           </button>
-                        </div>
                   </div>
                </div>
             </div>
         </div>
     </div>
-
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
 <?php
     include 'inc/footer.php';
 ?>
