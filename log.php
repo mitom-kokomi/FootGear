@@ -1,11 +1,11 @@
 <?php
+    session_start();
     include 'inc/header.php';
     include 'classes/log/sign_in.php';
     include 'classes/log/sign_up.php';
 ?>
 <?php
     //if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    session_start();
     if (isset($_POST['sign_in'])) {
         $username = $_POST['username'];
         $userpass = $_POST['userpass'];

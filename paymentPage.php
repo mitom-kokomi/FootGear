@@ -1,8 +1,6 @@
 <?php
-    session_start();
-    echo $_SESSION['username'];
-    include 'inc/header.php';
-
+   session_start();
+   include 'inc/header.php';
 ?>
     <div class="table-product" style="padding-bottom:35px;padding-top:35px;">
             <div class="container">
