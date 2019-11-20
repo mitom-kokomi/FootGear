@@ -224,7 +224,7 @@
                                         <br>
                                         <div class="info-product" align="center">
                                         <br><p style="font-weight: bold"><?php echo $row['productname'] ?></p>
-                                            <p class="price-product" style="font-weight: bold"> <?php echo $row['price']?> </p>
+                                            <p class="price-product" style="font-weight: bold;color:red;"> <?php echo $row['price']."$"?> </p>
 
                                         <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
                                             <p class="footer-product">
