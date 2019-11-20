@@ -7,7 +7,7 @@
 	}
 	public function signin_ad() {
 		if (empty($this->u) || empty($this->p)){
-			$alert = "Có nhập cũng thiếu đm ";
+			$alert = "Vui lòng điền đầy đủ thông tin";
 			return $alert;
 		}
 		else {
@@ -16,7 +16,7 @@
 			$query = pg_query($db_connection,$sql);
 			$rows = pg_num_rows($query);
 			if ($rows == 0) {
-				$alert = "Có nhập cũng sai đm ";
+				$alert = "Sai tên hoặc mật khẩu";
 				return $alert;
 			}
 			else {

@@ -227,11 +227,9 @@
                                             <p class="price-product" style="font-weight: bold;color:red;"> <?php echo $row['price']."$"?> </p>
 
                                         <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
-                                            <form class="footer-product" action="productDetails.php" method="post">
-                                                <button  type="button" class="btn btn-success " ><a href="productDetails.php"></a>View</button>
-                                                <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
-                                                </button>
-                                            </form>
+                                            <p class="footer-product">
+                                                <a href="productDetails.php?view=detail&id=<?php echo $row['productid']?>" class="btn btn-success" >View Prodcut</a>
+                                            </p>
                                         </div>
                                            <!--kết thúc phần thông tin của sản phầm-->
                                     </div>
@@ -305,6 +303,12 @@
 
 });
     </script>
+   <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+
 <?php
     include 'inc/footer.php';
 ?>
