@@ -1,5 +1,5 @@
 <?php
-   session_start();
+    session_start();
     include 'inc/header.php';
 ?>
 
@@ -202,14 +202,14 @@
 
                            if ( isset($_POST['btn_search'])  ) {
                                 $search = $_POST['searchtext'] ;
-                          
                                 $select = "SELECT * FROM product  where productname like '%$search%' ORDER BY productid ASC LIMIT '$perpage' OFFSET '$offset' ; ";
-           
                                 $result = pg_query($select);
                                 $totalitem = pg_query($db_connection,"SELECT * FROM product  where productname like '%$search%' ;");
                                 $totalitem = pg_num_rows($totalitem);
-                                //$totalpage = ceil($totalitem / $perpage); 
-                                while ($row = pg_fetch_array($result)) { $totalpage = ceil($totalitem / $perpage); 
+                                $totalpage = ceil($totalitem / $perpage);
+
+                                while ($row = pg_fetch_array($result)) { 
+                                    
                         ?> 
 
                             <div class="col-xs-12 col-sm-4 product" style="padding:0;height: 385px" id="pro1">
