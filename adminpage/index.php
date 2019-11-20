@@ -47,15 +47,15 @@
               <button class="btn" type="button" name="button" style="width:100%;">Dashboard</button>
             </div>
             <div class="quanlydonhang">
-              <button class="btn" type="button" name="button" style="width:100%;margin-top:10px">Quản lý đơn hàng</button>
+              <button class="btn" type="button" name="button" style="width:100%;margin-top:10px"><a href="ordermanage.php">Quản lý đơn hàng</a> </button>
             </div>
             <div class="quanlysanpham">
               <div class="dropdown" >
-                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%;margin-top:10px;">Thêm sản phẩm mới<span class="caret"></span></button>
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%;margin-top:10px;">Quản lý sản phẩm<span class="caret"></span></button>
                   <ul class="dropdown-menu" style="width:100%;">
                     <li><a href="#">Thêm</a></li>
-                    <li><a href="edit.php">Sửa</a></li>
-                    <li><a href="#">Xóa</a></li>
+                    <li><a href="edit.php">Chỉnh Sửa</a></li>
+
                   </ul>
                 </div>
             </div>

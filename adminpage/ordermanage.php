@@ -47,15 +47,15 @@
               <button class="btn" type="button" name="button" style="width:100%;">Dashboard</button>
             </div>
             <div class="quanlydonhang">
-              <button class="btn" type="button" name="button" style="width:100%;margin-top:10px">Quản lý đơn hàng</button>
+              <button class="btn" type="button" name="button" style="width:100%;margin-top:10px"><a href="ordermanage.php">Quản lý đơn hàng</a></button>
             </div>
             <div class="quanlysanpham">
               <div class="dropdown" >
-                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%;margin-top:10px;">Thêm sản phẩm mới<span class="caret"></span></button>
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%;margin-top:10px;">Quản lý sản phẩm<span class="caret"></span></button>
                   <ul class="dropdown-menu" style="width:100%;">
                     <li><a href="index.php">Thêm</a></li>
-                    <li><a href="#">Sửa</a></li>
-                    <li><a href="#">Xóa</a></li>
+                    <li><a href="edit.php">Chỉnh Sửa</a></li>
+
                   </ul>
                 </div>
             </div>
@@ -67,7 +67,24 @@
             </div>
 
             <div class="row" >
+              <?php
 
+                $conn = pg_connect("host=localho st dbname=footgear user=postgres password=thangem9x ");
+                $perpage = !empty($_GET['perpage'])?$_GET['perpage']:4;
+                $currentpage =!empty($_GET['page'])?$_GET['page']:1;
+                $offset = ($currentpage - 1) * $perpage;
+
+                $select = "SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
+                       INNER JOIN customer ON orders.customernumber = customer.customernumber ORDER BY ordernumber ASC LIMIT '$perpage' OFFSET '$offset' ; ";
+
+                $result = pg_query($select);
+                $totalitem = pg_query($conn,"SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
+                       INNER JOIN customer ON orders.customernumber = customer.customernumber; ");
+                $totalitem = pg_num_rows($totalitem);
+                $totalpage = ceil($totalitem / $perpage);
+                while ($row = pg_fetch_array($result)) {
+
+               ?>
                <div class="row" style="border-bottom:1px solid;">
 
                  <div class="col-md-12 col-xs-12">
@@ -76,34 +93,17 @@
                       <table class="table table-hover table-bordered">
                          <thead>
                             <tr>
-                               <th style="width:5%;">ID</th>
-                               <th style="width:30%;">IMAGE</th>
-                               <th style="width:10%;">NAME</th>
-                               <th style="width:20%;">DESCRIPT</th>
+                               <th style="width:5%;">MÃ</th>
+                               <th style="width:35%;">ẢHH</th>
+                               <th style="width:10%;">TÊN</th>
+                               <th style="width:10%;">MÔ TẢ</th>
                                <th style="width:5%;">SIZE</th>
-                               <th style="width:5%;">AMOUNT</th>
-                               <th style="width:10%;">SUM</th>
-                               <th style="width:10%;">STATUS</th>
+                               <th style="width:5%;">SL</th>
+                               <th style="width:10%;">TỔNG</th>
+                               <th style="width:5%;">T.THÁI</th>
+                               <th style="width:15%;">KH</th>
                             </tr>
                          </thead>
-                         <?php
-
-                           $conn = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x ");
-                           $perpage = !empty($_GET['perpage'])?$_GET['perpage']:4;
-                           $currentpage =!empty($_GET['page'])?$_GET['page']:1;
-                           $offset = ($currentpage - 1) * $perpage;
-
-                           $select = "SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
-                                  INNER JOIN customer ON orders.customernumber = customer.customernumber ORDER BY ordernumber ASC LIMIT '$perpage' OFFSET '$offset' ; ";
-
-                           $result = pg_query($select);
-                           $totalitem = pg_query($conn,"SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
-                                  INNER JOIN customer ON orders.customernumber = customer.customernumber; ");
-                           $totalitem = pg_num_rows($totalitem);
-                           $totalpage = ceil($totalitem / $perpage);
-                           while ($row = pg_fetch_array($result)) {
-
-                          ?>
                          <tbody>
                             <tr>
                                <td><?php echo $row['ordernumber'] ?></td>
@@ -138,6 +138,9 @@
                                    });
                                </script>
                                <td><?php echo $row['status'] ?></td>
+                                <td><?php echo $row['customeraddress'] ; echo"<br>";
+                                echo $row['phone'];echo "<br>";
+                                echo $row['orderdate']?></td>
                             </tr>
                          </tbody>
                       </table>

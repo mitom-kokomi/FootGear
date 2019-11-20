@@ -47,15 +47,15 @@
               <button class="btn" type="button" name="button" style="width:100%;">Dashboard</button>
             </div>
             <div class="quanlydonhang">
-              <button class="btn" type="button" name="button" style="width:100%;margin-top:10px">Quản lý đơn hàng</button>
+              <button class="btn" type="button" name="button" style="width:100%;margin-top:10px"><a href="ordermanage.php">Quản lý đơn hàng</a> </button>
             </div>
             <div class="quanlysanpham">
               <div class="dropdown" >
-                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%;margin-top:10px;">Thêm sản phẩm mới<span class="caret"></span></button>
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%;margin-top:10px;">Quản lý sản phẩm<span class="caret"></span></button>
                   <ul class="dropdown-menu" style="width:100%;">
                     <li><a href="index.php">Thêm</a></li>
-                    <li><a href="#">Sửa</a></li>
-                    <li><a href="#">Xóa</a></li>
+                    <li><a href="edit.php">Chỉnh Sửa</a></li>
+
                   </ul>
                 </div>
             </div>
@@ -67,6 +67,7 @@
             </div>
 
             <div class="row" >
+              <?php include 'controlleredit.php'; ?>
               <?php
 
                 $conn = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x ");
@@ -90,7 +91,7 @@
                  </div>
                  <div class="col-md-9 col-xs-9">
 
-                   <form class="form-inline" action="controlleredit.php" method="POST">
+                   <form class="form-inline" action="edit.php" method="POST">
 
                      <label for="name" style="width:20%">Tên sản phẩm: </label>
                      <input type="text" class="form-control" id="email" style="width:50%; margin-bottom:5px; margin-top:15px;"name="edit-productname"; value="<?php echo $row['productname'] ?>">
@@ -152,7 +153,7 @@
                 <a href="#" style="color: black !important;">PAYMENT METHOD</a>
                 <div class="row" style="margin-top:5px ;">
                     <div class="col-md-4 col-xs-4">
-                        <img src="img/checkout-page1.png" style="border:1px solid;">   
+                        <img src="img/checkout-page1.png" style="border:1px solid;">
                     </div>
                     <div class="col-md-4 col-xs-4">
                         <img src="img/checkout-page2.png" style="border:1px solid;">
@@ -164,5 +165,10 @@
             </div>
         </div>
     </div>
-    
+    <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
 </body>
