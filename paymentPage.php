@@ -54,7 +54,7 @@
 
                               </td>
                               <?php $sum =   $row['amount'] * $row['price']?>
-                              <td class="sum-money"><?php echo $sum ?></td>
+                              <td class="sum-money"><?php echo $sum ?> $ </td>
                               <script>
                                   $(document).ready(function () {
                                       var price = <?php echo $row['price'] ?>;
