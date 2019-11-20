@@ -7,7 +7,7 @@
    <div class="product-detail">
         <div class="container">
            <div class="row">
-              <p style="width: 100%;height: 40px;background-color: #d7d7d7;line-height: 40px;color: #121212;text-indent: 1%;">HOME > NIKE > Nike Air Force 1
+              <p style="width: 100%;height: 40px;background-color: #d7d7d7;line-height: 40px;color: #121212;text-indent: 1%;">HOME > NIKE > Nike 1
               </p>
            </div>
         </div>
@@ -87,7 +87,7 @@
                        </p>
                        <div id="rating1">
                           <label>Rating</label>
-                        
+
                        </div>
                        <button type="submit" class="btn btn-primary btn-block">Rating
                        <span class="review-text" style="display:none"><span
@@ -97,7 +97,7 @@
                     <!-- khu vực lựa chọn kích thước sản phẩm -->
                     <div class="choose-size-product" style="margin-top: 10px">
                        <p style="font-weight: bold;">Size Selection</p>
-                       
+
                        <div class="box-size" style="margin-top: 10px">
                           <div class="box-size-pro box1"
                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
@@ -127,8 +127,8 @@
                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
                              45
                           </div>
-                          
-                          
+
+
                        </div>
                        <div class="add-to-cart">
                           <button class="btn btn-success btn-lg btn-block btn-click-add-to-cart disabled">
@@ -172,7 +172,7 @@ $('.box-size-pro').click(function () {
 
 });
     </script>
-        
+
 <?php
     include 'inc/footer.php';
-?>   
+?>

@@ -20,9 +20,9 @@
 				return $alert;
 			}
 			else {
-				$sql1 = "select customername from customer where username ='$this->u' ";
+				$sql1 = "select customernumber from customer where username ='$this->u' ";
 				$query1 = pg_query($db_connection,$sql1);
-				$_SESSION['customername'] = $query1 ;
+				$_SESSION['customernumber'] = $query1 ;
 				$_SESSION['username'] = $this->u;
 				header('Location:../FootGear/index.php');
 			}

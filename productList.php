@@ -199,16 +199,16 @@
                            $perpage = !empty($_GET['perpage'])?$_GET['perpage']:6;
                            $currentpage =!empty($_GET['page'])?$_GET['page']:1;
                            $offset = ($currentpage - 1) * $perpage;
-           
+
                            $select = "SELECT * FROM product ORDER BY productid ASC LIMIT '$perpage' OFFSET '$offset' ; ";
-           
+
                            $result = pg_query($select);
                            $totalitem = pg_query($db_connection,$sql);
                            $totalitem = pg_num_rows($totalitem);
                            $totalpage = ceil($totalitem / $perpage);
 
                            while ($row = pg_fetch_array($result)) {
-                        ?> 
+                        ?>
 
                             <div class="col-xs-12 col-sm-4 product" style="padding:0;height: 385px" id="pro1">
                                     <div class="sanpham" id="sanpham1">
@@ -225,10 +225,10 @@
                                         <div class="info-product" align="center">
                                         <br><p style="font-weight: bold"><?php echo $row['productname'] ?></p>
                                             <p class="price-product" style="font-weight: bold"> <?php echo $row['price']?> </p>
-                                              
+
                                         <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
                                             <p class="footer-product">
-                                                <button type="button" class="btn btn-success btn-click-muahang">Shop Now</button>
+                                                <button  type="button" class="btn btn-success "><a href="productDetails.php ?id=<?=$row['productid']?>"></a>View</button>
                                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
                                                 </button>
                                             </p>
@@ -236,8 +236,8 @@
                                            <!--kết thúc phần thông tin của sản phầm-->
                                     </div>
                             </div>
-                        <?php } ?>  
-                    </div> 
+                        <?php } ?>
+                    </div>
                     <ul class="pagination" style="margin-left : 40%;padding-top:30px;">
                         <?php include 'adminpage/pagination.php'; ?>
                      </ul>
@@ -262,9 +262,9 @@
       // xư lý sự kiện của danh sách chi tiết sản phầm
       $(document).ready(function () {
       //  xử lý sự kiện khi người dùng click vao sản phẩm
-      $(document).on('click','.product',function () {
-         window.location="productDetails.php";
-      });
+    //  $(document).on('click','.product',function () {
+    //     window.location="productDetails.php";
+  //    });
       $(document).on('click','.btn-click-xem-chi-tiet',function () {
         window.location="productDetails.php";
       });
@@ -272,7 +272,7 @@
          window.location="cartPage.php";
       });
 
-    
+
       // ban đâu sẽ ẩn  hết các thành phần( phần ảnh review và  các nút bấm)
       $(".product .header-image-product .left").hide();
       $('.product .info-product .footer-product').hide();

@@ -53,7 +53,7 @@
               <div class="dropdown" >
                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%;margin-top:10px;">Thêm sản phẩm mới<span class="caret"></span></button>
                   <ul class="dropdown-menu" style="width:100%;">
-                    <li><a href="#">Thêm</a></li>
+                    <li><a href="index.php">Thêm</a></li>
                     <li><a href="#">Sửa</a></li>
                     <li><a href="#">Xóa</a></li>
                   </ul>
@@ -69,7 +69,7 @@
             <div class="row" >
               <?php
 
-                $conn = pg_connect("host=localhost dbname=postgres user=postgres password=postgre ");
+                $conn = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x ");
                 $perpage = !empty($_GET['perpage'])?$_GET['perpage']:4;
                 $currentpage =!empty($_GET['page'])?$_GET['page']:1;
                 $offset = ($currentpage - 1) * $perpage;
@@ -86,7 +86,7 @@
                <div class="row" style="border-bottom:1px solid;">
                  <div class="col-md-3 col-xs-3" >
 
-                   <img src="img/sanpham3.jpg" class="img-responsive img-change">
+                   <img src="<?php echo $row['productimage'] ?>" class="img-responsive img-change">
                  </div>
                  <div class="col-md-9 col-xs-9">
 

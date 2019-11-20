@@ -1,5 +1,7 @@
 <?php
    session_start();
+   //$username = $_SESSION['customernumber'];
+   $username = $_SESSION['username'];
    include 'inc/header.php';
 ?>
     <div class="table-product" style="padding-bottom:35px;padding-top:35px;">
@@ -11,7 +13,9 @@
 
                    $conn = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x ");
 
-                   $select = "SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid WHERE customernumber = 1;  ";
+                   $select = "SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
+                          INNER JOIN customer ON orders.customernumber = customer.customernumber
+                          WHERE username = '$username';  ";
 
                    $result = pg_query($select);
 
