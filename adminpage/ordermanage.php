@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <?php include 'controller_manage.php'; ?>
     <!-- Đây là top -->
     <div class="container" style="padding-bottom:15px;border-bottom:1px solid;">
         <div class="row">
@@ -37,9 +38,9 @@
         </div>
     </div>
     <div class="">
-      <div class="container">
+      <div class="">
         <div class="row">
-          <div class="col-xs-12 col-sm-3">
+          <div class="col-xs-12 col-sm-2">
             <div class="header-filter" style="color: white;background-color: #121212;height: 30px;line-height: 30px;cursor: pointer;font-weight: bold;text-indent: 5%;">
                Tác Vụ
             </div>
@@ -67,6 +68,7 @@
             </div>
 
             <div class="row" >
+            
               <?php
 
                 $conn = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x ");
@@ -75,11 +77,11 @@
                 $offset = ($currentpage - 1) * $perpage;
 
                 $select = "SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
-                       INNER JOIN customer ON orders.customernumber = customer.customernumber ORDER BY ordernumber ASC LIMIT '$perpage' OFFSET '$offset' ; ";
+                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'shipped') or (orders.status = 'not delivery') ORDER BY ordernumber ASC LIMIT '$perpage' OFFSET '$offset' ; ";
 
                 $result = pg_query($select);
                 $totalitem = pg_query($conn,"SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
-                       INNER JOIN customer ON orders.customernumber = customer.customernumber; ");
+                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'shipped') or (orders.status = 'not delivery'); ");
                 $totalitem = pg_num_rows($totalitem);
                 $totalpage = ceil($totalitem / $perpage);
                 while ($row = pg_fetch_array($result)) {
@@ -93,20 +95,24 @@
                       <table class="table table-hover table-bordered">
                          <thead>
                             <tr>
-                               <th style="width:5%;">MÃ</th>
-                               <th style="width:35%;">ẢHH</th>
-                               <th style="width:10%;">TÊN</th>
-                               <th style="width:10%;">MÔ TẢ</th>
+                               <th style="width:5%;">STT</th>
+                               <th style="width:25%;">ẢNH</th>
+                               <th style="width:15%;">TÊN</th>
+                               <th style="width:15%;">MÔ TẢ</th>
                                <th style="width:5%;">SIZE</th>
                                <th style="width:5%;">SL</th>
                                <th style="width:10%;">TỔNG</th>
                                <th style="width:5%;">T.THÁI</th>
                                <th style="width:15%;">KH</th>
+                               <th></th>
                             </tr>
                          </thead>
                          <tbody>
                             <tr>
-                               <td><?php echo $row['ordernumber'] ?></td>
+                              <form class="" action="ordermanage.php" method="post">
+
+
+                               <td><input style="width:30px;" type="text" name="number" value=" <?php echo $row['ordernumber'] ?>"></td>
                                <td>
                                   <img src="<?php echo $row['productimage'] ?>" style="display: block;width:200px;height: 200px ">
                                </td>
@@ -124,23 +130,17 @@
                                </td>
                                <?php $sum =   $row['amount'] * $row['price']?>
                                <td class="sum-money"><?php echo $sum ?> $ </td>
-                               <script>
-                                   $(document).ready(function () {
-                                       var price = <?php echo $row['price'] ?>;
-                                       $("#so-luong").change(function () {
-                                       var so_luong = $(this).val();
-                                       var sum= parseInt(so_luong)* price;
-                                       $('.sum-money').text(sum);
-                                       });
-                                       $('.btn-buy-it').click(function(){
-                                           alert("Bạn đã mua sản phẩm thành công");
-                                       });
-                                   });
-                               </script>
+
                                <td><?php echo $row['status'] ?></td>
-                                <td><?php echo $row['customeraddress'] ; echo"<br>";
-                                echo $row['phone'];echo "<br>";
-                                echo $row['orderdate']?></td>
+                                <td>địa chỉ : <?php echo $row['customeraddress'] ; echo"<br>";
+                                echo "sdt : "; echo $row['phone'];echo "<br>";
+                                echo "ngày đặt : "; echo $row['orderdate']?></td>
+                                <td>
+
+                                    <button type="submit" name="xoa"> Xóa</button>
+
+                                </td>
+                                </form>
                             </tr>
                          </tbody>
                       </table>
