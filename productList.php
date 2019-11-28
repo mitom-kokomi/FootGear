@@ -236,7 +236,7 @@
                             </div>
                         <?php } ?>
                     </div>
-                    <ul class="pagination" style="margin-left : 40%;padding-top:30px;">
+                    <ul class="pagination" style="float:right;padding-top:30px;">
                         <?php include 'adminpage/pagination.php'; ?>
                      </ul>
               </div>

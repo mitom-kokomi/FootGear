@@ -69,7 +69,7 @@
             <div class="row" >
               <?php
 
-                $conn = pg_connect("host=localho st dbname=footgear user=postgres password=thangem9x ");
+                $conn = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x ");
                 $perpage = !empty($_GET['perpage'])?$_GET['perpage']:4;
                 $currentpage =!empty($_GET['page'])?$_GET['page']:1;
                 $offset = ($currentpage - 1) * $perpage;

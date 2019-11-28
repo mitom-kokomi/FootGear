@@ -25,7 +25,8 @@
                     <div class="col-sm-9">
                         <div class="row">
                             <form class="input-group col-md-12" action="../FootGear/search.php" method ="post">
-                                <input class="form-control py-2" type="text" placeholder="Tìm kiếm theo tên sản phẩm" name ="searchtext" >
+                                <input class="form-control py-2" type="text" placeholder="Tìm kiếm theo tên sản phẩm" name ="searchtext" 
+                                value="<?php echo (isset($_GET['searchtext'])?$_GET['searchtext'] : "");?>">
                                 <span class="input-group-append">
                                     <button class="btn btn-outline-secondary" type="submit" name="btn_search">
                                         <i class="fa fa-search">

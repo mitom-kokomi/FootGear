@@ -66,7 +66,7 @@
                                       $('.sum-money').text(sum);
                                       });
                                       $('.btn-buy-it').click(function(){
-                                          alert("Bạn đã mua sản phẩm thành công");
+                                          //alert("Bạn đã mua sản phẩm thành công");
                                       });
                                   });
                               </script>
@@ -87,7 +87,7 @@
                   <div class="right" style="float: right;">
                      <div class="col-xs-12 col-sm-3 col-sm-offset-6">
                         <button type="button" class="btn btn-primary btn-buy-it" style="margin-left:850px ;">
-                           <a href="index.php" style="color: cornsilk !important;">Buy It</a>
+                           <a href="buyit.php" style="color: cornsilk !important;">Buy It</a>
                         </button>
                      </div>
                   </div>    

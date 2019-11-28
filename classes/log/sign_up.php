@@ -9,7 +9,7 @@ class sign_up {
 	}
 	function signup_user(){
 		if (empty($this->t) || empty($this->u) || empty($this->p) || empty($this->pn)) {
-			$alert = "Có điền cũng đ đủ là sao";
+			$alert = "Vui lòng điền đầy đủ thông tin";
 			return $alert;
 		}
 		else {
@@ -27,7 +27,7 @@ class sign_up {
 				$sql = "insert into customer(customername,phone,username,userpass) values ('$this->t','$this->pn','$this->u','$this->p')";
 				$query = pg_query($db_connection,$sql);
 
-				$alert = "Dễ thế mà giờ mới tạo xong ? :D ?";
+				$alert = "Bạn đã đăng kí tài khoản thành công";
 				return $alert;
 			}
 		}
