@@ -37,9 +37,9 @@
         </div>
     </div>
     <div class="">
-      <div class="container">
+      <div class="">
         <div class="row">
-          <div class="col-xs-12 col-sm-3">
+          <div class="col-xs-12 col-sm-2">
             <div class="header-filter" style="color: white;background-color: #121212;height: 30px;line-height: 30px;cursor: pointer;font-weight: bold;text-indent: 5%;">
                Tác Vụ
             </div>
@@ -69,13 +69,13 @@
             <div class="row" >
               <?php
 
-                $conn = pg_connect("host=localho st dbname=footgear user=postgres password=thangem9x ");
+                $conn = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x ");
                 $perpage = !empty($_GET['perpage'])?$_GET['perpage']:4;
                 $currentpage =!empty($_GET['page'])?$_GET['page']:1;
                 $offset = ($currentpage - 1) * $perpage;
 
                 $select = "SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
-                       INNER JOIN customer ON orders.customernumber = customer.customernumber ORDER BY ordernumber ASC LIMIT '$perpage' OFFSET '$offset' ; ";
+                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'shipped') or (orders.status = 'not delivery') ORDER BY ordernumber ASC LIMIT '$perpage' OFFSET '$offset' ; ";
 
                 $result = pg_query($select);
                 $totalitem = pg_query($conn,"SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
@@ -93,10 +93,10 @@
                       <table class="table table-hover table-bordered">
                          <thead>
                             <tr>
-                               <th style="width:5%;">MÃ</th>
-                               <th style="width:35%;">ẢHH</th>
-                               <th style="width:10%;">TÊN</th>
-                               <th style="width:10%;">MÔ TẢ</th>
+                               <th style="width:5%;">STT</th>
+                               <th style="width:20%;">ẢHH</th>
+                               <th style="width:15%;">TÊN</th>
+                               <th style="width:15%;">MÔ TẢ</th>
                                <th style="width:5%;">SIZE</th>
                                <th style="width:5%;">SL</th>
                                <th style="width:10%;">TỔNG</th>
@@ -124,23 +124,11 @@
                                </td>
                                <?php $sum =   $row['amount'] * $row['price']?>
                                <td class="sum-money"><?php echo $sum ?> $ </td>
-                               <script>
-                                   $(document).ready(function () {
-                                       var price = <?php echo $row['price'] ?>;
-                                       $("#so-luong").change(function () {
-                                       var so_luong = $(this).val();
-                                       var sum= parseInt(so_luong)* price;
-                                       $('.sum-money').text(sum);
-                                       });
-                                       $('.btn-buy-it').click(function(){
-                                           alert("Bạn đã mua sản phẩm thành công");
-                                       });
-                                   });
-                               </script>
+
                                <td><?php echo $row['status'] ?></td>
-                                <td><?php echo $row['customeraddress'] ; echo"<br>";
-                                echo $row['phone'];echo "<br>";
-                                echo $row['orderdate']?></td>
+                                <td>địa chỉ : <?php echo $row['customeraddress'] ; echo"<br>";
+                                echo "sdt : "; echo $row['phone'];echo "<br>";
+                                echo "ngày đặt : "; echo $row['orderdate']?></td>
                             </tr>
                          </tbody>
                       </table>

@@ -37,9 +37,9 @@
         </div>
     </div>
     <div class="">
-      <div class="container">
+      <div class="">
         <div class="row">
-          <div class="col-xs-12 col-sm-3">
+          <div class="col-xs-12 col-sm-2">
             <div class="header-filter" style="color: white;background-color: #121212;height: 30px;line-height: 30px;cursor: pointer;font-weight: bold;text-indent: 5%;">
                Tác Vụ
             </div>
@@ -68,15 +68,15 @@
             <div class="add">
               <form class="formadd form-group" action="index.php" method="post">
                     <?php include 'connect.php'; ?>
-                    <label class="" for="">Tên sản phẩm :</label>
+                    <label class="" for=""><b>Tên sản phẩm :</b></label>
                     <input type="text" class="form-control " name="new-productName" value="" placeholder="Nhập tên sản phẩm"><br>
-                    <label class="" for="">Loại sản phẩm :</label>
+                    <label class="" for=""> <b>Loại sản phẩm :</b> </label>
                     <input type="text" class="form-control " name="new-productLine" value="" placeholder="Nhập tên sản phẩm"><br>
-                    <label class="" for="">Hình ảnh sản phẩm :</label>
+                    <label class="" for=""> <b>Hình ảnh sản phẩm :</b> </label>
                     <input type="file" class="form-control " name="new-productImage" value="" placeholder="Hình ảnh"><br>
-                    <label for="">Giá sản phẩm ($) :</label><input class="form-control" type="number" name="new-price" value="" placeholder="Nhập giá sản phẩm"><br>
-                    <label for="">Kích thước :</label><input class="form-control" type="text" name="new-size" value="" placeholder="Nhập kích thước sản phẩm"><br>
-                    <label for="">Mô tả sản phẩm :</label>
+                    <label for=""> <b>Giá sản phẩm ($) :</b> </label><input class="form-control" type="number" name="new-price" value="" placeholder="Nhập giá sản phẩm"><br>
+                    <label for=""> <b>Kích thước :</b> </label><input class="form-control" type="text" name="new-size" value="" placeholder="Nhập kích thước sản phẩm"><br>
+                    <label for=""> <b>Mô tả sản phẩm :</b> </label>
                     <textarea name="new-description" class="form-control" rows="8" cols="80" placeholder="Nhập mô tả"></textarea><br>
                     <button class="btn btn-success" type="submit" name="add">Lưu</button>
 
