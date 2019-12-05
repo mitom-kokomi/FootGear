@@ -77,11 +77,11 @@
                 $offset = ($currentpage - 1) * $perpage;
 
                 $select = "SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
-                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'shipped') or (orders.status = 'not delivery') ORDER BY ordernumber ASC LIMIT '$perpage' OFFSET '$offset' ; ";
+                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'incart') or (orders.status = 'not delivery') ORDER BY ordernumber ASC LIMIT '$perpage' OFFSET '$offset' ; ";
 
                 $result = pg_query($select);
                 $totalitem = pg_query($conn,"SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
-                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'shipped') or (orders.status = 'not delivery'); ");
+                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'incart') or (orders.status = 'not delivery'); ");
                 $totalitem = pg_num_rows($totalitem);
                 $totalpage = ceil($totalitem / $perpage);
                 while ($row = pg_fetch_array($result)) {

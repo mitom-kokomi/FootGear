@@ -1,9 +1,20 @@
 <?php
     session_start();
     include 'inc/header.php';
+    include 'classes/payment/exBuyit.php';
+    $username = $_SESSION['username'];
 ?>
 <?php
-    if (isset($_POST['ok'])) echo "<script>alert('Đơn hàng của bạn sẽ được giao trong thời gian ngắn nhất')</script>";
+    if (isset($_POST['ok'])) {
+        $name = $_POST['getname'];
+        $phone = $_POST['getphone'];
+        $address = $_POST['getaddress'];
+
+        $ex = new exBuyit();
+        $alert = $ex->buy($username);
+
+    }
+
 ?>
 <div class="container" style="padding-top:50px;padding-bottom:50px;">
         <div class="row">
@@ -11,7 +22,7 @@
             <div class="col-sm-5">
                 <h3 style="text-align:center;">Nhập thông tin người nhận</h3><br>
                 <div class="container">
-                    <form action="productList.php" method="post">
+                    <form action="buyit.php" method="post">
                         <div class="form-group">
                             <label style="text-align:center;">Tên người nhận hàng</label>
                             <input type="text" class="form-control" name="getname" placeholder="đang chờ ..." >

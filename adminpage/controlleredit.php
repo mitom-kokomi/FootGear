@@ -15,7 +15,7 @@
             $productline = $_POST['edit-productline'];
             $productimage = $_POST['edit-productimage'];
             $price = $_POST['edit-price'];
-            $size = $_POST['edit-size'];
+            $size = $_POST['edit-size']; 
             $description = $_POST['edit-description'];
 						$id = $_POST['productid'];
 						$query = "UPDATE product SET
@@ -29,7 +29,7 @@
 						WHERE productid = '$id' ";
 						$result = pg_query($conn, $query);
 						echo "<script>alert('Bạn đã thay đổi sản phẩm thành công');</script>";
-        					}
+        				}
 
 
 
