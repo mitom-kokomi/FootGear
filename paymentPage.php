@@ -1,6 +1,6 @@
 <?php
    session_start();
-   $username = $_SESSION['username'];
+    if(isset($_SESSION['username'])) $username = $_SESSION['username'];
    include 'inc/header.php';
 ?>
     <div class="table-product" style="padding-bottom:35px;padding-top:35px;">
@@ -9,7 +9,7 @@
 
                <div class="row">
                  <?php
-                     
+
 
 
 
@@ -17,7 +17,7 @@
 
                    $select = "SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
                           INNER JOIN customer ON orders.customernumber = customer.customernumber
-                          WHERE username = '$username';  ";
+                          WHERE (username = '$username') and (status = 'incart');  ";
 
                    $result = pg_query($select);
 
@@ -90,7 +90,7 @@
                            <a href="buyit.php" style="color: cornsilk !important;">Buy It</a>
                         </button>
                      </div>
-                  </div>    
+                  </div>
                </div>
                   </div>
                </div>
