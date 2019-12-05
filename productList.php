@@ -22,7 +22,7 @@
                               <li class="list-group-item" style="padding: 0px;">
                                  <div class="checkbox">
                                     <label style="font-size: 1.2em">
-                                    <input type="checkbox" value="" unchecked>
+                                    <input type="checkbox" value="" checked>
                                     <span class="cr"><i class="cr-icon fa fa-check"></i></span> NIKE
                                     </label>
                                  </div>

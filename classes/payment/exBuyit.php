@@ -18,7 +18,8 @@
 
             $sql = "update orders set status = 'delivery' where customernumber = '$cn'; ";
 			$query = pg_query($db_connection,$sql);
-			//header('location:../Footgear/productList.php');
+			header('location:../Footgear/productList.php');
         }
+        
     }
 ?>
