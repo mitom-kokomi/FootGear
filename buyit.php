@@ -2,6 +2,7 @@
     session_start();
     include 'inc/header.php';
     include 'classes/payment/exBuyit.php';
+
     $username = $_SESSION['username'];
 ?>
 <?php
@@ -13,7 +14,10 @@
         $ex = new exBuyit();
         $alert = $ex->buy($username);
 
+        $addinfo = $ex->addinfo($phone,$address,$username);
+
     }
+
 
 ?>
 <div class="container" style="padding-top:50px;padding-bottom:50px;">

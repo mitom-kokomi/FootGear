@@ -68,7 +68,7 @@
             </div>
 
             <div class="row" >
-            
+
               <?php
 
                 $conn = pg_connect("host=localhost dbname=footgear user=postgres password=thangem9x ");
@@ -77,11 +77,11 @@
                 $offset = ($currentpage - 1) * $perpage;
 
                 $select = "SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
-                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'incart') or (orders.status = 'not delivery') ORDER BY ordernumber ASC LIMIT '$perpage' OFFSET '$offset' ; ";
+                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'delivery') or (orders.status = 'shipped') ORDER BY ordernumber ASC LIMIT '$perpage' OFFSET '$offset' ; ";
 
                 $result = pg_query($select);
                 $totalitem = pg_query($conn,"SELECT * FROM orders INNER JOIN product ON orders.productid = product.productid
-                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'incart') or (orders.status = 'not delivery'); ");
+                       INNER JOIN customer ON orders.customernumber = customer.customernumber where (orders.status = 'delivery') or (orders.status = 'shipped'); ");
                 $totalitem = pg_num_rows($totalitem);
                 $totalpage = ceil($totalitem / $perpage);
                 while ($row = pg_fetch_array($result)) {
@@ -134,7 +134,10 @@
                                <td><?php echo $row['status'] ?></td>
                                 <td>địa chỉ : <?php echo $row['customeraddress'] ; echo"<br>";
                                 echo "sdt : "; echo $row['phone'];echo "<br>";
-                                echo "ngày đặt : "; echo $row['orderdate']?></td>
+                                echo "ngày đặt : "; echo $row['orderdate'];
+                                echo "<br>";
+                                echo "tên KH : "; echo $row['customername'];
+                                ?></td>
                                 <td>
 
                                     <button type="submit" name="xoa"> Xóa</button>
